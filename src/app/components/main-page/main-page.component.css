@@ -1,0 +1,15 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper > * {
+  padding: 0.5em;
+  margin: 0.5em;
+  padding-left: 0.9em;
+}
+
+.searchAfter{
+  align-self: center;
+}

@@ -1,0 +1,25 @@
+<div class="spinnerWrapper" *ngIf="!show">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="show" class="wrapper">
+  <div class="detailsWrapper">
+    <h1>
+      {{ show.title }} <span *ngIf="show.year">({{ show.year }})</span>
+    </h1>
+    <h1 *ngIf="show.aired_episodes">
+      Number of episodes: {{ show.aired_episodes }}
+    </h1>
+
+    <h1 *ngIf="show.overview">Overview: {{ show.overview }}</h1>
+
+    <div *ngIf="show.genres">
+        <h1>Genre(s): <button *ngFor="let genre of show.genres" mat-raised-button color="accent">{{genre}} </button></h1>
+    </div>
+    <h1 *ngIf="show.language">Language: <button mat-raised-button color="accent"> {{ show.language }}</button></h1>
+  </div>
+  <div>
+    <h1 *ngIf="show.rating">Rating: {{ show.rating }}</h1>
+    <h1 *ngIf="show.votes">Votes: {{ show.votes }}</h1>
+  </div>
+</div>

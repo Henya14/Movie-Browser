@@ -1,0 +1,26 @@
+.searchForm{
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  margin-top: 50px;
+  transform: translateX(-4em);
+}
+.searchBar{
+  width: 60%;
+  padding-left: 10px;
+}
+
+.searchInput{
+  font-size: 40px;
+  text-align: center;
+}
+
+#searchClearButton{
+  font-size: 2em;
+  text-align: end;
+}
+
+.searchLabel{
+  font-size: 40px;
+  align-self: flex-end;
+}

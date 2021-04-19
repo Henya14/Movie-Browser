@@ -1,0 +1,9 @@
+<div class="searchForm">
+  <h1 class="searchLabel">Search:  </h1>
+  <mat-form-field class="searchBar">
+      <input matInput type="text"  class="searchInput" [(ngModel)]="value" autocomplete="off" (input)="fireSearchTermChanged()"/>
+      <button  mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="setValue('')">
+        <mat-icon id="searchClearButton">close</mat-icon>
+      </button>
+  </mat-form-field>
+</div>
