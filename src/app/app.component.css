@@ -3,3 +3,9 @@
     flex-grow: 1;
     justify-content: center;
 }
+
+a{
+  color: inherit;
+  font: inherit;
+  text-decoration: inherit;
+}

@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MovieDetailsComponent } from './components/details-tabs/movie-details/movie-details.component';
+import { PeopleDetailsComponent } from './components/details-tabs/people-details/people-details.component';
 import { ShowDetailsComponent } from './components/details-tabs/show-details/show-details.component';
 import { MainPage } from './components/main-page/main-page.component';
-import { MoviesShowsTabComponent } from './components/main-page/movies-shows-tab/movies-shows-tab.component';
 
 const routes: Routes = [
     { path: "", component: MainPage },
     { path: "movies/:id", component: MovieDetailsComponent },
     { path: "shows/:id", component: ShowDetailsComponent },
+    { path: "people/:id", component: PeopleDetailsComponent },
 ];
 
 @NgModule({

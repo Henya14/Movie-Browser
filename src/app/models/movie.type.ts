@@ -1,4 +1,5 @@
-import { IDS } from "./record.type";
+import { IDS } from "./ID.type";
+
 
 
 

@@ -14,9 +14,35 @@
     <h1 *ngIf="show.overview">Overview: {{ show.overview }}</h1>
 
     <div *ngIf="show.genres">
-        <h1>Genre(s): <button *ngFor="let genre of show.genres" mat-raised-button color="accent">{{genre}} </button></h1>
+      <h1>
+        Genre(s):
+        <button
+          *ngFor="let genre of show.genres"
+          mat-raised-button
+          color="accent"
+        >
+          {{ genre }}
+        </button>
+      </h1>
     </div>
-    <h1 *ngIf="show.language">Language: <button mat-raised-button color="accent"> {{ show.language }}</button></h1>
+    <h1 *ngIf="show.language">
+      Language:
+      <button mat-raised-button color="accent">{{ show.language }}</button>
+    </h1>
+
+    <div *ngIf="seasons">
+      <h2>Seasons</h2>
+      <mat-expansion-panel *ngFor="let season of seasons" style="margin: 1rem">
+        <mat-expansion-panel-header>
+          <h1>Season {{ season.number }}</h1>
+        </mat-expansion-panel-header>
+        <div *ngFor="let episode of season.episodes" style="margin-left: 1rem">
+          <h2>
+            Episode: {{ episode.number }}<h3><i>"{{ episode.title }}"</i></h3>
+          </h2>
+        </div>
+      </mat-expansion-panel>
+    </div>
   </div>
   <div>
     <h1 *ngIf="show.rating">Rating: {{ show.rating }}</h1>

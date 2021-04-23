@@ -132,9 +132,9 @@ export class MoviesShowsTabComponent implements OnInit, OnChanges {
     this.getRecords();
   }
 
-  recordClicked(movie: Record) {
+  recordClicked(record: Record) {
 
-    console.log(movie);
+    console.log(record);
   }
 
   getRecordTitle(record: Record): string {

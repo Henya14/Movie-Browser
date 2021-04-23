@@ -17,9 +17,25 @@
         <h1>Genre(s): <button *ngFor="let genre of movie.genres" mat-raised-button color="accent">{{genre}} </button></h1>
     </div>
     <h1 *ngIf="movie.language">Language: <button mat-raised-button color="accent"> {{ movie.language }}</button></h1>
+
+    <div *ngIf="castMembers">
+      <h1>Cast:</h1>
+      <div *ngFor="let castMember of castMembers" class="castMember">
+        <a [routerLink]="['/people', castMember.person.ids.trakt]"><h2>{{castMember.person.name}}: </h2></a>
+        <div class="charactersWrapper">
+          <h2 *ngFor="let character of castMember.characters">
+            {{character}}
+          </h2>
+        </div>
+      </div>
+    </div>
+
+
   </div>
   <div>
     <h1 *ngIf="movie.rating">Rating: {{ movie.rating }}</h1>
     <h1 *ngIf="movie.votes">Votes: {{ movie.votes }}</h1>
   </div>
+
+
 </div>

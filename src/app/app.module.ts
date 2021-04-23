@@ -25,6 +25,10 @@ import { MovieDetailsComponent } from './components/details-tabs/movie-details/m
 import { ShowDetailsComponent } from './components/details-tabs/show-details/show-details.component';
 import { ShowService } from './services/show.service';
 import { MovieService } from './services/movie.service';
+import { PeopleDetailsComponent } from './components/details-tabs/people-details/people-details.component';
+import { PeopleService } from './services/people.service';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +38,8 @@ import { MovieService } from './services/movie.service';
     MoviesShowsTabComponent,
     MovieShowButtonComponent,
     MovieDetailsComponent,
-    ShowDetailsComponent
+    ShowDetailsComponent,
+    PeopleDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +56,10 @@ import { MovieService } from './services/movie.service';
     MatProgressSpinnerModule,
     MatBadgeModule,
     MatCheckboxModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatExpansionModule
   ],
-  providers: [RecordService, CommonService, ShowService, MovieService],
+  providers: [RecordService, CommonService, ShowService, MovieService, PeopleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

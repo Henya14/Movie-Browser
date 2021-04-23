@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MovieDetails} from 'src/app/models/movie.type';
+import { CastMember } from 'src/app/models/castmember.type';
+
+import { MovieDetails } from 'src/app/models/movie.type';
 import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
@@ -13,14 +15,16 @@ export class MovieDetailsComponent implements OnInit {
   constructor(private movieService: MovieService, private route: ActivatedRoute) { }
 
   movie? : MovieDetails
+  castMembers?: CastMember[]
   ngOnInit(): void {
     this.route.params.subscribe( params => {
 
       let movieId = +params['id']
       this.movieService.getMovieById(movieId).subscribe(response => {
-        console.log(response)
         this.movie=response
       })
+
+      this.movieService.getCastForMovieById(movieId).subscribe(response => this.castMembers = response)
     })
   }
 

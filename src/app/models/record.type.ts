@@ -1,3 +1,5 @@
+import { IDS } from "./ID.type";
+
 
 
 export enum RecordType {
@@ -16,9 +18,3 @@ export interface Record {
 
 
 
-export interface IDS {
-  trakt: number;
-  slug:  string;
-  imdb:  string;
-  tmdb:  number;
-}

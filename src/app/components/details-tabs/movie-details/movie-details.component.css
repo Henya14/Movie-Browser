@@ -7,3 +7,13 @@
 .detailsWrapper {
   width: 70%;
 }
+.castMember{
+  display: flex;
+}
+.charactersWrapper {
+  display: flex;
+}
+
+.charactersWrapper > h2{
+  margin-left: 1rem;
+}

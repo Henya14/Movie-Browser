@@ -1,15 +1,17 @@
 <mat-toolbar color="primary">
-  <a
-    routerLink=".."
-    [hidden]="!backButtonEnabled"
+  <button mat-button
+    (click)="backClicked()"
+    *ngIf="backButtonEnabled"
     style="text-decoration: none; color: white;"
   >
     <div style="display: flex">
       Back
     </div>
-  </a>
+  </button>
   <div class="toolbarContainer">
+    <a routerLink="/">
     <span>Movie Browser</span>
+    </a>
   </div>
 </mat-toolbar>
 
