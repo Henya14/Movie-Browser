@@ -9,6 +9,4 @@ export interface Episode {
   ids:    IDS;
 }
 
-interface Season {
-  episodes: Episode[]
-}
+

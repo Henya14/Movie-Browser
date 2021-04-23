@@ -33,3 +33,4 @@ export interface Airs {
   time:     string;
   timezone: string;
 }
+
