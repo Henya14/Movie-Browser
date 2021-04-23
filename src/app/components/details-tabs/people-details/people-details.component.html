@@ -4,20 +4,25 @@
 
 <div *ngIf="person" class="wrapper">
   <div class="detailsWrapper">
-    <h1 *ngIf="person.name">Name: {{person.name}}</h1>
-    <h1 *ngIf="person.birthday">Birthday: {{person.birthday}}</h1>
-    <h1 *ngIf="person.birthplace">Birthplace: {{person.birthplace}}</h1>
-    <h1  *ngIf="person.death">Death: {{person.death}}</h1>
-    <h1 *ngIf="person.homepage">Homepage: <a [href]="person.homepage">{{person.homepage}}</a></h1>
-    <h1  *ngIf="person.biography">Biography: {{person.biography}}</h1>
+    <h1 *ngIf="person.name">Name: {{ person.name }}</h1>
+    <h1 *ngIf="person.birthday">Birthday: {{ person.birthday }}</h1>
+    <h1 *ngIf="person.birthplace">Birthplace: {{ person.birthplace }}</h1>
+    <h1 *ngIf="person.death">Death: {{ person.death }}</h1>
+    <h1 *ngIf="person.homepage">
+      Homepage: <a [href]="person.homepage">{{ person.homepage }}</a>
+    </h1>
+    <h1 *ngIf="person.biography">Biography: {{ person.biography }}</h1>
 
-    <div *ngIf="movies" >
-      <h1>Movies: </h1>
-
-      <a *ngFor="let movie of movies" [routerLink]="['/movies', movie.ids.trakt]"><h1>{{movie.title}}</h1></a>
-
-
+    <div *ngIf="movies">
+      <h1>Movies:</h1>
+      <div class="moviesWrapper">
+        <a
+          *ngFor="let movie of movies"
+          [routerLink]="['/movies', movie.ids.trakt]"
+          class="movie"
+          ><h1>{{ movie.title }}</h1></a
+        >
+      </div>
     </div>
   </div>
-
 </div>

@@ -23,7 +23,7 @@ export class PeopleDetailsComponent implements OnInit {
       })
 
       this.peopleService.getPersonsMoviesById(personId).subscribe(response => {
-        this.movies = response
+        this.movies = response.sort((first, second) => first.title.localeCompare(second.title))
       })
     })
   }

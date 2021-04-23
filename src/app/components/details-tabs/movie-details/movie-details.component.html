@@ -23,8 +23,8 @@
       <div *ngFor="let castMember of castMembers" class="castMember">
         <a [routerLink]="['/people', castMember.person.ids.trakt]"><h2>{{castMember.person.name}}: </h2></a>
         <div class="charactersWrapper">
-          <h2 *ngFor="let character of castMember.characters">
-            {{character}}
+          <h2 *ngFor="let character of castMember.characters; let idx = index">
+            {{character}}<span *ngIf="idx<castMember.characters.length-1">,</span>
           </h2>
         </div>
       </div>
@@ -33,7 +33,7 @@
 
   </div>
   <div>
-    <h1 *ngIf="movie.rating">Rating: {{ movie.rating }}</h1>
+    <h1 *ngIf="movie.rating">Rating: {{ movie.rating | number }}</h1>
     <h1 *ngIf="movie.votes">Votes: {{ movie.votes }}</h1>
   </div>
 
