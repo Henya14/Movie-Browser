@@ -8,3 +8,7 @@
 .detailsWrapper {
   width: 70%;
 }
+
+.seasons{
+  animation: fadeIn 1s, slideInFromBelow 1s;
+}

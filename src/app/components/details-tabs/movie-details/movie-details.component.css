@@ -19,3 +19,7 @@
 .charactersWrapper > h2{
   margin-left: 1rem;
 }
+
+.castMembers{
+  animation: fadeIn 1s, slideInFromBelow 1s;
+}

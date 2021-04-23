@@ -18,7 +18,10 @@
     </div>
     <h1 *ngIf="movie.language">Language: <button mat-raised-button color="accent"> {{ movie.language }}</button></h1>
 
-    <div *ngIf="castMembers">
+    <div *ngIf="!castMembers">
+      <mat-spinner></mat-spinner>
+    </div>
+    <div *ngIf="castMembers" class="castMembers">
       <h1>Cast:</h1>
       <div *ngFor="let castMember of castMembers" class="castMember">
         <a [routerLink]="['/people', castMember.person.ids.trakt]"><h2>{{castMember.person.name}}: </h2></a>
