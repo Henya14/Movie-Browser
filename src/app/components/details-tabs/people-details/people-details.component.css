@@ -18,3 +18,7 @@
 .movie{
   padding: 1rem;
 }
+
+.movies{
+  animation: fadeIn 1s, slideInFromBelow 1s;
+}

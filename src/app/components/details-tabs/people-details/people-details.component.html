@@ -13,7 +13,10 @@
     </h1>
     <h1 *ngIf="person.biography">Biography: {{ person.biography }}</h1>
 
-    <div *ngIf="movies">
+    <div *ngIf="!movies">
+      <mat-spinner></mat-spinner>
+    </div>
+    <div *ngIf="movies" class="movies">
       <h1>Movies:</h1>
       <div class="moviesWrapper">
         <a
