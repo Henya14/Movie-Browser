@@ -63,7 +63,7 @@ export class MoviesShowsTabComponent implements OnInit, OnChanges {
   totalPages: number = 0;
 
   loading: boolean = false;
-  page_limit = 8;
+  page_limit = 4;
 
   ngOnInit(): void {
     this.getRecords();

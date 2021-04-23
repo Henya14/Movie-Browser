@@ -1,6 +1,6 @@
 .cardHolder{
   width: 1280px;
-  height: 790px;
+  height: 395px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -8,10 +8,15 @@
 .wrapper{
   display: flex;
   justify-content: center;
+
 }
 .pageCounter {
   align-self: center;
   margin: 10px;
+}
+.navWrapper {
+  animation: fadeIn 1s ease-in 0.2s 1 backwards, slideInFromBelow 1.2s;
+  margin-bottom: 60px;
 }
 
 
