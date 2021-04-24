@@ -1,6 +1,6 @@
 <div>
-  <h1 *ngIf="isError">An error occured! Please refresh the page!</h1>
-  <div class="wrapper" *ngIf="!loading && !isError && records.length <= 0">
+  <h1 *ngIf="isError" class="animation">An error occured! Please refresh the page!</h1>
+  <div class="wrapper animation" *ngIf="!loading && !isError && records.length <= 0">
     <h1>Sorry, no results! :/</h1>
   </div>
   <div class="wrapper" *ngIf="!loading && !isError && records.length > 0">
