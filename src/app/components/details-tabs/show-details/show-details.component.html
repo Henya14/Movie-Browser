@@ -1,11 +1,11 @@
-<div class="spinnerWrapper" *ngIf="!show && !isError">
+<div class="spinner-wrapper" *ngIf="!show && !isError">
   <mat-spinner></mat-spinner>
 </div>
 
 <h1 *ngIf="isError" class="animation">An error occured! Please refresh the page!</h1>
 
 <div *ngIf="show && !isError" class="wrapper animation">
-  <div class="detailsWrapper">
+  <div class="details-wrapper">
     <h1>
       {{ show.title }} <span *ngIf="show.year">({{ show.year }})</span>
     </h1>

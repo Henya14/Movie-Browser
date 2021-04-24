@@ -8,7 +8,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   height: 350px;
 }
 
-.spinnerWrapper{
+.spinner-wrapper{
   display: flex;
   justify-content: center;
 

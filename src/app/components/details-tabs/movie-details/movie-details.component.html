@@ -1,9 +1,9 @@
-<div class="spinnerWrapper" *ngIf="!movie && !isError">
+<div class="spinner-wrapper" *ngIf="!movie && !isError">
   <mat-spinner></mat-spinner>
 </div>
 <h1 *ngIf="isError" class="animation">An error occured! Please refresh the page!</h1>
 <div *ngIf="movie  && !isError" class="wrapper animation">
-  <div class="detailsWrapper">
+  <div class="details-wrapper">
     <h1>
       {{ movie.title }} <span *ngIf="movie.year">({{ movie.year }})</span>
     </h1>
@@ -23,9 +23,9 @@
     </div>
     <div *ngIf="castMembers" class="animation">
       <h1>Cast:</h1>
-      <div *ngFor="let castMember of castMembers" class="castMember">
+      <div *ngFor="let castMember of castMembers" class="cast-member">
         <a [routerLink]="['/people', castMember.person.ids.trakt]"><h2>{{castMember.person.name}}: </h2></a>
-        <div class="charactersWrapper">
+        <div class="characters-wrapper">
           <h2 *ngFor="let character of castMember.characters; let idx = index">
             {{character}}<span *ngIf="idx<castMember.characters.length-1">,</span>
           </h2>

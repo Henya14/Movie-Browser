@@ -4,7 +4,7 @@
     <h1>Sorry, no results! :/</h1>
   </div>
   <div class="wrapper" *ngIf="!loading && !isError && records.length > 0">
-    <div class="cardHolder">
+    <div class="card-holder">
       <a
         *ngFor="let record of records"
         [routerLink]="[getType() + 's', record.ids.trakt]"
@@ -18,7 +18,7 @@
       </a>
     </div>
   </div>
-  <div class="navWrapper wrapper" *ngIf="!loading && !isError && records.length > 0">
+  <div class="nav-wrapper wrapper" *ngIf="!loading && !isError && records.length > 0">
     <button
       mat-button
       [disabled]="currentPageNumber <= 1"
@@ -34,7 +34,7 @@
     >
       <mat-icon>arrow_back_ios</mat-icon>
     </button>
-    <div class="pageCounter">
+    <div class="page-counter">
       {{ totalPages > 0 ? currentPageNumber : 0 }}/{{ totalPages }}
     </div>
     <button
@@ -54,7 +54,7 @@
     </button>
   </div>
 
-  <div class="spinnerWrapper" *ngIf="loading && !isError">
+  <div class="spinner-wrapper" *ngIf="loading && !isError">
     <mat-spinner></mat-spinner>
   </div>
 

@@ -4,18 +4,18 @@
   padding: 1em;
 
 }
-.detailsWrapper {
+.details-wrapper {
   width: 70%;
 }
-.castMember{
+.cast-member{
   display: flex;
   padding-left: 1rem;
 }
-.charactersWrapper {
+.characters-wrapper {
   display: flex;
 }
 
-.charactersWrapper > h2{
+.characters-wrapper > h2{
   margin-left: 1rem;
 }
 

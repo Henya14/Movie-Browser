@@ -4,11 +4,11 @@
   padding: 1em;
 }
 
-.detailsWrapper {
+.details-wrapper {
   width: 70%;
 }
 
-.moviesWrapper{
+.movies-wrapper{
     display: flex;
     flex-wrap: wrap;
     padding: 1rem;

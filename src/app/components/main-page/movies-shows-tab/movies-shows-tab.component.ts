@@ -35,7 +35,7 @@ export class MoviesShowsTabComponent implements OnInit, OnChanges {
     if (!changes.searchTerm && !changes.searchAfter) {
       return;
     }
-    this.currentPageNumber = 1;
+
     let termChanged = false;
     if (changes.searchTerm) {
       termChanged = true;
