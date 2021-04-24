@@ -14,20 +14,23 @@ export class ShowDetailsComponent implements OnInit {
   constructor(
     private showService: ShowService,
     private route: ActivatedRoute
-  ) {}
+    ) {}
 
-  show?: ShowDetails;
-  seasons?: Season[];
+    show?: ShowDetails
+    seasons?: Season[]
+    isError: boolean = false
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       let showID = +params['id'];
       this.showService.getShowById(showID).subscribe((response) => {
-        this.show = response;
-      });
+        this.show = response
+      },
+      () => (this.isError = true))
 
       this.showService.getSeasonsForShowByID(showID).subscribe((response) => {
         this.seasons = response;
-      });
+      },
+      () => (this.isError = true))
     });
   }
 }

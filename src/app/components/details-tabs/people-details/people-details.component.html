@@ -1,8 +1,8 @@
-<div class="spinnerWrapper" *ngIf="!person">
+<div class="spinnerWrapper" *ngIf="!person && !isError">
   <mat-spinner></mat-spinner>
 </div>
-
-<div *ngIf="person" class="wrapper">
+<h1 *ngIf="isError" class="animation">An error occured! Please refresh the page!</h1>
+<div *ngIf="person && !isError" class="wrapper animation">
   <div class="detailsWrapper">
     <h1 *ngIf="person.name">Name: {{ person.name }}</h1>
     <h1 *ngIf="person.birthday">Birthday: {{ person.birthday }}</h1>
@@ -16,7 +16,7 @@
     <div *ngIf="!movies">
       <mat-spinner></mat-spinner>
     </div>
-    <div *ngIf="movies" class="movies">
+    <div *ngIf="movies" class="animation">
       <h1>Movies:</h1>
       <div class="moviesWrapper">
         <a

@@ -15,3 +15,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin: 40px;
   height: 810px;
 }
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes slideInFromBelow {
+  0% {transform: translateY(60px);}
+  100% {transform: translateY(0px);}
+}
+
+.animation {
+  animation: fadeIn 1s, slideInFromBelow 1s;
+}

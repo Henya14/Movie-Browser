@@ -1,14 +1,23 @@
 <div>
   <search-bar (onSearchTermChanged)="searchTermChanged($event)"></search-bar>
   <div *ngIf="searchTerm">
-  <div class="wrapper">
-    <mat-button-toggle-group name="search for" aria-label="Search For">
-      <mat-button-toggle [checked]="searchForMovies" (change)="searchForMovies = $event.source.checked" value="movie">Movie</mat-button-toggle>
-      <mat-button-toggle [checked]="!searchForMovies" (change)="searchForMovies = !$event.source.checked" value="shoe">Show</mat-button-toggle>
-    </mat-button-toggle-group>
+    <div class="wrapper">
+      <mat-button-toggle-group name="search for" aria-label="Search For">
+        <mat-button-toggle
+          [checked]="searchForMovies"
+          (change)="searchForMovies = $event.source.checked"
+          value="movie"
+          >Movie</mat-button-toggle
+        >
+        <mat-button-toggle
+          [checked]="!searchForMovies"
+          (change)="searchForMovies = !$event.source.checked"
+          value="shoe"
+          >Show</mat-button-toggle
+        >
+      </mat-button-toggle-group>
+    </div>
   </div>
-
-</div>
 
   <mat-tab-group mat-align-tabs="center" *ngIf="!searchTerm">
     <mat-tab label="Popular Movies"
@@ -20,8 +29,15 @@
     <mat-tab label="Popular Shows"
       ><movies-shows-tab type="show" query="popular"></movies-shows-tab
     ></mat-tab>
-    <mat-tab label="Trending Shows"><movies-shows-tab type="show" query="trending"></movies-shows-tab></mat-tab>
+    <mat-tab label="Trending Shows"
+      ><movies-shows-tab type="show" query="trending"></movies-shows-tab
+    ></mat-tab>
   </mat-tab-group>
 
-  <movies-shows-tab *ngIf="searchTerm" [searchType]="getSearchType()" [searchTerm]="searchTerm" [searchAfter]="getSearchAfter()" ></movies-shows-tab>
+  <movies-shows-tab
+    *ngIf="searchTerm"
+    [searchType]="getSearchType()"
+    [searchTerm]="searchTerm"
+    [searchAfter]="getSearchAfter()"
+  ></movies-shows-tab>
 </div>

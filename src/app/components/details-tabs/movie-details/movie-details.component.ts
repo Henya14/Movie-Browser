@@ -8,24 +8,31 @@ import { MovieService } from 'src/app/services/movie.service';
 @Component({
   selector: 'movie-details',
   templateUrl: './movie-details.component.html',
-  styleUrls: ['./movie-details.component.css']
+  styleUrls: ['./movie-details.component.css'],
 })
 export class MovieDetailsComponent implements OnInit {
+  constructor(
+    private movieService: MovieService,
+    private route: ActivatedRoute
+  ) {}
 
-  constructor(private movieService: MovieService, private route: ActivatedRoute) { }
-
-  movie? : MovieDetails
-  castMembers?: CastMember[]
+  movie?: MovieDetails;
+  castMembers?: CastMember[];
+  isError: boolean = false;
   ngOnInit(): void {
-    this.route.params.subscribe( params => {
+    this.route.params.subscribe((params) => {
+      let movieId = +params['id'];
+      this.movieService.getMovieById(movieId).subscribe(
+        (response) => {
+          this.movie = response;
+        },
+        () => (this.isError = true)
+      );
 
-      let movieId = +params['id']
-      this.movieService.getMovieById(movieId).subscribe(response => {
-        this.movie=response
-      })
-
-      this.movieService.getCastForMovieById(movieId).subscribe(response => this.castMembers = response)
-    })
+      this.movieService.getCastForMovieById(movieId).subscribe(
+        (response) => (this.castMembers = response),
+        () => (this.isError = true)
+      );
+    });
   }
-
 }

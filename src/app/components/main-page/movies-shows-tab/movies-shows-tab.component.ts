@@ -1,4 +1,10 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { Record, RecordType } from 'src/app/models/record.type';
 import {
   RecordRequestResponse,
@@ -16,46 +22,50 @@ export class MoviesShowsTabComponent implements OnInit, OnChanges {
   @Input() query: 'trending' | 'popular' | 'search' = 'popular';
   @Input() searchTerm?: string = '';
   @Input() searchAfter?: SearchAfterType[] = [];
-  @Input() searchType: RecordType = RecordType.Movie
-  constructor(private movieShowService: RecordService) {}
+  @Input() searchType: RecordType = RecordType.Movie;
+
+  constructor(private recordService: RecordService) {}
+
   ngOnChanges(changes: SimpleChanges): void {
-    if(changes.searchType) {
-      this.currentPageNumber = 1
-      this.getRecords()
-      return
+    if (changes.searchType) {
+      this.currentPageNumber = 1;
+      this.getRecords();
+      return;
     }
-    if(!changes.searchTerm && !changes.searchAfter) {
-      return
+    if (!changes.searchTerm && !changes.searchAfter) {
+      return;
     }
-    this.currentPageNumber = 1
-    let termChanged = false
-    if(changes.searchTerm){
-      termChanged = true
+    this.currentPageNumber = 1;
+    let termChanged = false;
+    if (changes.searchTerm) {
+      termChanged = true;
     }
 
-
-    let searchAfterIsTheSame: boolean = true
-    if(changes.searchAfter) {
-      if(changes.searchAfter.previousValue?.length === changes.searchAfter.currentValue?.length ) {
-
-        for(let i = 0; i < changes.searchAfter.previousValue.length; i++){
-          if(changes.searchAfter.previousValue[i] !==  changes.searchAfter.currentValue[i]) {
-            searchAfterIsTheSame = false
-            break
+    let searchAfterIsTheSame: boolean = true;
+    if (changes.searchAfter) {
+      if (
+        changes.searchAfter.previousValue?.length ===
+        changes.searchAfter.currentValue?.length
+      ) {
+        for (let i = 0; i < changes.searchAfter.previousValue.length; i++) {
+          if (
+            changes.searchAfter.previousValue[i] !==
+            changes.searchAfter.currentValue[i]
+          ) {
+            searchAfterIsTheSame = false;
+            break;
           }
         }
       } else {
-        searchAfterIsTheSame = false
+        searchAfterIsTheSame = false;
       }
     }
 
-    if(searchAfterIsTheSame && !termChanged) {
-
-      return
+    if (searchAfterIsTheSame && !termChanged) {
+      return;
     }
 
-
-    this.getRecords()
+    this.getRecords();
   }
 
   records: Record[] = [];
@@ -71,37 +81,48 @@ export class MoviesShowsTabComponent implements OnInit, OnChanges {
 
   getRecords() {
     this.loading = true;
-
     if (!this.searchTerm) {
       if (this.type === 'movie') {
         if (this.query === 'popular') {
-          this.movieShowService
+          this.recordService
             .getPopularMovies(this.page_limit, this.currentPageNumber)
-            .subscribe(this.handleResult.bind(this));
+            .subscribe(this.handleResult.bind(this)),
+            this.handleError.bind(this);
         } else if (this.query === 'trending') {
-          this.movieShowService
+          this.recordService
             .getTrendingMovies(this.page_limit, this.currentPageNumber)
-            .subscribe(this.handleResult.bind(this));
+            .subscribe(
+              this.handleResult.bind(this),
+              this.handleError.bind(this)
+            );
         }
       } else {
         if (this.query === 'popular') {
-          this.movieShowService
+          this.recordService
             .getPopularShows(this.page_limit, this.currentPageNumber)
-            .subscribe(this.handleResult.bind(this));
+            .subscribe(
+              this.handleResult.bind(this),
+              this.handleError.bind(this)
+            );
         } else {
-          this.movieShowService
+          this.recordService
             .getTrendingShows(this.page_limit, this.currentPageNumber)
-            .subscribe(this.handleResult.bind(this));
+            .subscribe(
+              this.handleResult.bind(this),
+              this.handleError.bind(this)
+            );
         }
       }
     } else {
-      this.movieShowService.getSearchResults(
-        this.searchTerm || '',
-        this.page_limit,
-        this.currentPageNumber,
-        this.searchType,
-        this.searchAfter
-      ).subscribe(this.handleResult.bind(this));
+      this.recordService
+        .getSearchResults(
+          this.searchTerm || '',
+          this.page_limit,
+          this.currentPageNumber,
+          this.searchType,
+          this.searchAfter
+        )
+        .subscribe(this.handleResult.bind(this), this.handleError.bind(this))
     }
   }
 
@@ -109,6 +130,11 @@ export class MoviesShowsTabComponent implements OnInit, OnChanges {
     this.records = result.records;
     this.totalPages = result.pages;
     this.loading = false;
+  }
+
+  isError: boolean = false;
+  handleError(error: any) {
+    this.isError = true;
   }
 
   nextPage() {
@@ -133,12 +159,19 @@ export class MoviesShowsTabComponent implements OnInit, OnChanges {
   }
 
   recordClicked(record: Record) {
-
-    console.log(record);
+    //console.log(record);
   }
 
   getRecordTitle(record: Record): string {
-    const year = record.year? `(${record.year})` : ''
-    return `${record.title} ${year}`
+    const year = record.year ? `(${record.year})` : '';
+    return `${record.title} ${year}`;
+  }
+
+  getType() {
+    if(this.searchTerm) {
+      return this.searchType
+    } else {
+      return this.type
+    }
   }
 }

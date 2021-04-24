@@ -2,9 +2,8 @@
   display: flex;
   justify-content: center;
   padding: 1em;
-  animation: fadeIn 1s, slideInFromBelow 1s;
-}
 
+}
 .detailsWrapper {
   width: 70%;
 }
@@ -20,6 +19,3 @@
   margin-left: 1rem;
 }
 
-.castMembers{
-  animation: fadeIn 1s, slideInFromBelow 1s;
-}

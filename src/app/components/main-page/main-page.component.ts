@@ -1,6 +1,6 @@
-import {Component, OnInit} from "@angular/core"
+import { Component, OnInit } from "@angular/core"
 import { RecordType } from "src/app/models/record.type"
-import { RecordService, SearchAfterType } from "src/app/services/record.service"
+import { SearchAfterType } from "src/app/services/record.service"
 
 @Component({
   selector: 'main-page',
@@ -8,7 +8,7 @@ import { RecordService, SearchAfterType } from "src/app/services/record.service"
   styleUrls: ['./main-page.component.css']
 })
 export class MainPage implements OnInit{
-  constructor(private movieShowService: RecordService) {}
+  constructor() {}
 
   searchForMovies = true
 

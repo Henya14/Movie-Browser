@@ -15,8 +15,6 @@ export class AppComponent{
       this.backButtonEnabled = !!value.url
     })
     router.events.subscribe((val) => {
-
-      console.log()
       if(val instanceof NavigationEnd)
         this.backButtonEnabled = router.url !== '/'
     } )
@@ -24,7 +22,6 @@ export class AppComponent{
 
   backClicked() {
     this._location.back()
-    this.backButtonEnabled = this.router.url !== '/'
   }
 
 }

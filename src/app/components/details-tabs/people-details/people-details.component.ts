@@ -2,30 +2,40 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PeopleDetails } from 'src/app/models/people.type';
 import { PeopleService } from 'src/app/services/people.service';
-import {Record} from 'src/app/models/record.type'
+import { Record } from 'src/app/models/record.type';
 
 @Component({
   selector: 'people-details',
   templateUrl: './people-details.component.html',
-  styleUrls: ['./people-details.component.css']
+  styleUrls: ['./people-details.component.css'],
 })
 export class PeopleDetailsComponent implements OnInit {
-
-  constructor(private peopleService: PeopleService, private route: ActivatedRoute) { }
+  constructor(
+    private peopleService: PeopleService,
+    private route: ActivatedRoute
+  ) {}
 
   person?: PeopleDetails
   movies?: Record[]
+  isError: boolean = false
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      let personId = +params['id']
-      this.peopleService.getPersonById(personId).subscribe(response => {
-        this.person = response
-      })
+    this.route.params.subscribe((params) => {
+      let personId = +params['id'];
+      this.peopleService.getPersonById(personId).subscribe(
+        (response) => {
+          this.person = response;
+        },
+        () => (this.isError = true)
+      );
 
-      this.peopleService.getPersonsMoviesById(personId).subscribe(response => {
-        this.movies = response.sort((first, second) => first.title.localeCompare(second.title))
-      })
-    })
+      this.peopleService.getPersonsMoviesById(personId).subscribe(
+        (response) => {
+          this.movies = response.sort((first, second) =>
+            first.title.localeCompare(second.title)
+          );
+        },
+        () => (this.isError = true)
+      );
+    });
   }
-
 }
