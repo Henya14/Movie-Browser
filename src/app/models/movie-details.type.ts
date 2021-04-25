@@ -1,8 +1,5 @@
 import { IDS } from "./ID.type";
 
-
-
-
 export interface MovieDetails {
   title:                  string;
   year:                   number;
@@ -24,5 +21,3 @@ export interface MovieDetails {
   genres:                 string[];
   certification:          string;
 }
-
-

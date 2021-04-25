@@ -1,6 +1,6 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { NavigationEnd, NavigationStart, Router } from '@angular/router';
-import {Location} from '@angular/common';
+import { NavigationEnd, Router } from '@angular/router';
 
 
 @Component({

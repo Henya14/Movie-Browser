@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CastMember } from 'src/app/models/castmember.type';
 
-import { MovieDetails } from 'src/app/models/movie.type';
+import { MovieDetails } from 'src/app/models/movie-details.type';
 import { MovieService } from 'src/app/services/movie.service';
 
 @Component({

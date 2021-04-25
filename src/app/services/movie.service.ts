@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { CastMember } from "../models/castmember.type";
-import { MovieDetails } from "../models/movie.type";
+import { MovieDetails } from "../models/movie-details.type";
 import { CommonService } from "./common.service";
 
 

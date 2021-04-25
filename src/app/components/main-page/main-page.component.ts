@@ -22,6 +22,7 @@ export class MainPage implements OnInit{
   searchTermChanged(newSearchTerm: string) {
     this.searchTerm = newSearchTerm
   }
+
   getSearchAfter(): SearchAfterType[] {
     return [SearchAfterType.Title]
   }

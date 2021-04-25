@@ -5,7 +5,6 @@ export interface PeopleOverview {
   ids: IDS
 }
 
-
 export interface PeopleDetails extends  PeopleOverview{
   social_ids: SocialIDS;
   biography:  string;

@@ -1,7 +1,5 @@
 import { IDS } from "./ID.type";
 
-
-
 export enum RecordType {
   Movie = "movie",
   Show = "show"
@@ -14,7 +12,3 @@ export interface Record {
   ids: IDS
   watchers?: number
 }
-
-
-
-

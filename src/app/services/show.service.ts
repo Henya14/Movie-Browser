@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Episode } from "../models/episode.type";
 import { Season } from "../models/season.type";
-import { ShowDetails } from "../models/show.type";
+import { ShowDetails } from "../models/show-details.type";
 import { CommonService } from "./common.service";
 
 @Injectable()

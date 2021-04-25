@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Episode } from 'src/app/models/episode.type';
 import { Season } from 'src/app/models/season.type';
-import { ShowDetails } from 'src/app/models/show.type';
+import { ShowDetails } from 'src/app/models/show-details.type';
 import { ShowService } from 'src/app/services/show.service';
 
 @Component({
