@@ -13,11 +13,11 @@ import {
 } from 'src/app/services/record.service';
 
 @Component({
-  selector: 'movies-shows-tab',
-  templateUrl: './movies-shows-tab.component.html',
-  styleUrls: ['./movies-shows-tab.component.css'],
+  selector: 'records-tab',
+  templateUrl: './records-tab.component.html',
+  styleUrls: ['./records-tab.component.css'],
 })
-export class MoviesShowsTabComponent implements OnInit, OnChanges {
+export class RecordsTabComponent implements OnInit, OnChanges {
   @Input() type: 'movie' | 'show' = 'movie';
   @Input() query: 'trending' | 'popular' | 'search' = 'popular';
   @Input() searchTerm?: string = '';

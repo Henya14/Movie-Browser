@@ -20,24 +20,24 @@
   </div>
 
   <mat-tab-group mat-align-tabs="center" *ngIf="!searchTerm">
-    <mat-tab label="Popular Movies"
-      ><movies-shows-tab type="movie" query="popular"></movies-shows-tab
-    ></mat-tab>
-    <mat-tab label="Trending Movies"
-      ><movies-shows-tab type="movie" query="trending"></movies-shows-tab
-    ></mat-tab>
-    <mat-tab label="Popular Shows"
-      ><movies-shows-tab type="show" query="popular"></movies-shows-tab
-    ></mat-tab>
-    <mat-tab label="Trending Shows"
-      ><movies-shows-tab type="show" query="trending"></movies-shows-tab
-    ></mat-tab>
+    <mat-tab label="Popular Movies">
+      <records-tab type="movie" query="popular"></records-tab>
+    </mat-tab>
+    <mat-tab label="Trending Movies">
+      <records-tab type="movie" query="trending"></records-tab>
+    </mat-tab>
+    <mat-tab label="Popular Shows">
+      <records-tab type="show" query="popular"></records-tab>
+    </mat-tab>
+    <mat-tab label="Trending Shows">
+      <records-tab type="show" query="trending"></records-tab>
+    </mat-tab>
   </mat-tab-group>
 
-  <movies-shows-tab
+  <records-tab
     *ngIf="searchTerm"
     [searchType]="getSearchType()"
     [searchTerm]="searchTerm"
     [searchAfter]="getSearchAfter()"
-  ></movies-shows-tab>
+  ></records-tab>
 </div>

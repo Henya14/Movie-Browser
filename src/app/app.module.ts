@@ -13,10 +13,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MovieShowButtonComponent } from './components/common/movie-button/movie-show-button.component';
+import { RecordButtonComponent } from './components/common/record-button/record-button.component';
 import { SearchBar } from './components/common/search-bar/search-bar.component';
 import { MainPage } from './components/main-page/main-page.component';
-import { MoviesShowsTabComponent } from './components/main-page/movies-shows-tab/movies-shows-tab.component';
+import { RecordsTabComponent } from './components/main-page/records-tab/records-tab.component';
 import { CommonService } from './services/common.service';
 import { RecordService } from './services/record.service';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -35,8 +35,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     AppComponent,
     SearchBar,
     MainPage,
-    MoviesShowsTabComponent,
-    MovieShowButtonComponent,
+    RecordsTabComponent,
+    RecordButtonComponent,
     MovieDetailsComponent,
     ShowDetailsComponent,
     PeopleDetailsComponent

@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RecordType } from 'src/app/models/record.type';
 
 @Component({
-  selector: 'movie-show-button',
-  templateUrl: './movie-show-button.component.html',
-  styleUrls: ['./movie-show-button.component.css']
+  selector: 'record-button',
+  templateUrl: './record-button.component.html',
+  styleUrls: ['./record-button.component.css']
 })
-export class MovieShowButtonComponent implements OnInit {
+export class RecordButtonComponent implements OnInit {
 
   @Input() title: string = ''
   @Input() badgeCount?: number
@@ -22,6 +22,5 @@ export class MovieShowButtonComponent implements OnInit {
 
   onClick(){
     this.onButtonClicked.emit()
-
   }
 }

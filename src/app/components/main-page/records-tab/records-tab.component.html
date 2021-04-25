@@ -9,12 +9,12 @@
         *ngFor="let record of records"
         [routerLink]="[getType() + 's', record.ids.trakt]"
       >
-        <movie-show-button
+        <record-button
           [title]="getRecordTitle(record)"
           [badgeCount]="record.watchers"
           (onButtonClicked)="recordClicked(record)"
           [type]="record.type"
-        ></movie-show-button>
+        ></record-button>
       </a>
     </div>
   </div>
