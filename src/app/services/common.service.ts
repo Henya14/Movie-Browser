@@ -14,6 +14,11 @@ export class CommonService {
   .set('trakt-api-key', this.CLIENT_ID)
   .set('trakt-api-version', '2');
 
+  /**
+   * Makes an HTTP GET request and returns the whole response
+   * @param url - The url to which the GET request will be sent
+   * @returns - the response to the GET request
+   */
   getRequest(url: string): Observable<HttpResponse<Object>> {
     return this.http.get(`${this.BASE_URL}/${url}`, {
       headers: this.HEADER,

@@ -11,6 +11,11 @@ export class ShowService{
   BASE_URL = "shows"
   constructor(private commonService: CommonService) {}
 
+   /**
+   * Gets the details of the show with the given ID
+   * @param ID - The show's ID
+   * @returns - The Obsevable of the show's details
+   */
   getShowById(ID: number): Observable<ShowDetails>  {
       return this.commonService.getRequest(`${this.BASE_URL}/${ID}?extended=full`)
       .pipe(
@@ -21,6 +26,11 @@ export class ShowService{
       )
   }
 
+  /**
+   * Gets the seasons of the show with the given ID
+   * @param ID - The ID of the show to get the seasons for
+   * @returns - An Observable of the shows's seasons
+   */
   getSeasonsForShowByID(ID: number): Observable<Season[]> {
     return this.commonService.getRequest(`${this.BASE_URL}/${ID}/seasons?extended=episodes`)
     .pipe(
