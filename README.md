@@ -1,3 +1,7 @@
+# Starting the project for the first time
+
+Run `npm install` and then run `ng serve --open` and the website will be deployed to `http://localhost:4200/`
+
 # Hr2jo3Hazi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
