@@ -39,7 +39,7 @@
       <h2>Seasons</h2>
       <mat-expansion-panel *ngFor="let season of seasons" style="margin: 1rem">
         <mat-expansion-panel-header>
-          <h1>Season {{ season.number }}</h1>
+          <h1 style="margin-bottom: 0;">Season {{ season.number }}</h1>
         </mat-expansion-panel-header>
         <div *ngFor="let episode of season.episodes" style="margin-left: 1rem">
           <h2>
