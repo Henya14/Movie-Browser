@@ -6,10 +6,10 @@ import { ShowDetailsComponent } from './components/details-tabs/show-details/sho
 import { MainPage } from './components/main-page/main-page.component';
 
 const routes: Routes = [
-    { path: "", component: MainPage },
-    { path: "movies/:id", component: MovieDetailsComponent },
-    { path: "shows/:id", component: ShowDetailsComponent },
-    { path: "people/:id", component: PeopleDetailsComponent },
+  { path: "movies/:id", component: MovieDetailsComponent },
+  { path: "shows/:id", component: ShowDetailsComponent },
+  { path: "people/:id", component: PeopleDetailsComponent },
+  { path: "**", component: MainPage },
 ];
 
 @NgModule({
